@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+int top = -1;
+int stack[10]; 
+
+
+void push(int val) {
+    if (top >= 9) {  
+        cout << "Overflow! Cannot insert " << val << endl;
+    } else {
+        top++;  
+        stack[top] = val;  
+        cout << val << " pushed onto stack." << endl;
+    }
+}
+
+
+void pop() {
+    if (top == -1) {  
+        cout << "Underflow! Cannot pop from empty stack." << endl;
+    } else {
+        cout << stack[top] << " popped from stack." << endl;
+        top--; 
+    }
+}
+
+int main() {
+    push(100); 
+    push(200);
+    push(300);
+    push(400);
+    push(500);
+    push(600);
+    push(700);
+
+    pop();  
+    push(800); 
+
+    pop();  
+    pop();  
+    pop();  
+    cout << "Current stack value ";
+    for (int i = 0; i <= top; i++) {
+        cout << stack[i] << " ";  
+    }
+    cout << endl;
+
+    return 0;
+}
