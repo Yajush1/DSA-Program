@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int n;
+    float ave = 0, sum = 0;
+    int arr[100];
+
+    cout<<" Enter the no. of student";
+    cin>>n;
+    
+    cout<<"Enter the marks of " << n << " students";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    cout << "average marks" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    ave = sum / n;
+    cout << ave << endl;
+
+    return 0;
+}
